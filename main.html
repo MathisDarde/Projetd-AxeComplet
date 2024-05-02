@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Harry Potter Cards</title>
+    <link rel="icon" href="images/symbol deathly hallows.svg" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- création de la nav bar avec le logo et les puces -->
+      <a href="#"><div class="logo">Harry Potter Cards</div></a>
+      <input type="checkbox" id="nav_check" hidden />
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="active">Accueil</a>
+          </li>
+          <li>
+            <a href="tirage_quotidien.html">Tirage quotidien</a>
+          </li>
+          <li>
+            <a href="ma_collection.html">Ma collection</a>
+          </li>
+          <li>
+            <a href="echange.html">Echange de cartes</a>
+          </li>
+          <li>
+            <a href="profil.html">Profil</a>
+          </li>
+        </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+        <!-- création des div pour les barres du menu hamburger pour le responsive -->
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </header>
+    <section class="principal">
+      <!-- premier block du site qui va servir pour la page d'accueil -->
+      <div class="tirage_quo">
+        <a href="tirage_quotidien.html"
+          ><p class="titre">Tirage quotidien</p></a
+        >
+        <p class="dispo">Disponible aujourd'hui !</p>
+        <a href="tirage_quotidien.html"
+          ><img src="images/dos_carte_potter.png" alt="harry potter card"
+        /></a>
+        <a href="tirage_quotidien.html"
+          ><button>J'ouvre mon pack quotidien</button></a
+        >
+      </div>
+      <!-- second block du site qui va servir pour la page d'accueil -->
+      <div class="ma_coll">
+        <a href="ma_collection.html"><p class="titre">Ma collection</p></a>
+        <p class="dispo">
+          Découvrez toutes les cartes que vous avez debloquées !
+        </p>
+        <a href="ma_collection.html"
+          ><img src="images/dos_carte_potter.png" alt="harry potter card"
+        /></a>
+        <a href="ma_collection.html"
+          ><button>Je consulte mon grimoire</button></a
+        >
+      </div>
+      <div class="quiz">
+        <a href="quiz.html"><p class="titre">Le quiz Harry Potter</p></a>
+        <p class="dispo">
+          Venez tester vos connaissances sur la saga Harry Potter !
+        </p>
+        <a href="quiz.html"
+          ><img src="images/dos_carte_potter.png" alt="harry potter card"
+        /></a>
+        <a href="quiz.html"><button>Faire le quiz</button></a>
+      </div>
+    </section>
+    <section class="main">
+      <!-- on entre dans la table des cartes qui va recenser toutes les cartes présentes dans le jeu classées par maison ci-dessous -->
+      <div id="table">
+        <p class="titre">Table des cartes</p>
+        <div class="containersearchbar">
+          <!-- voici l'input de la barre de recherche avec une limite de caractères à 100 -->
+          <div class="loupe-container">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Rechercher une carte..."
+              maxlength="100"
+            />
+            <span class="search-icon"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></span>
+          </div>
+          <div class="autocomplete-search" id="autocomplete-search"></div>
+        </div>
+        <p class="maisons">Gryffondor</p>
+        <!-- voici le premier block qui permet d'afficher uniquement les cartes dont la maison est Gryffondor -->
+        <div class="gallery-wrap">
+          <img src="images/fleche_gauche_gry.png" alt="" id="backBtn" />
+          <div class="gallery" id="Gryffindor"></div>
+          <img src="images/fleche_droite_gry.png" alt="" id="nextBtn" />
+        </div>
+        <p class="maisonsbis">Serpentard</p>
+        <!-- voici le second block qui permet d'afficher uniquement les cartes dont la maison est Serpentard -->
+        <div class="gallery-wrap-bis">
+          <img src="images/fleche_gauche_ser.png" alt="" id="backBtn2" />
+          <div class="gallery-bis" id="Slytherin"></div>
+          <img src="images/fleche_droite_ser.png" alt="" id="nextBtn2" />
+        </div>
+        <p class="maisonster">Poufsouffle</p>
+        <!-- voici le troisième block qui permet d'afficher uniquement les cartes dont la maison est Poufsouffle -->
+        <div class="gallery-wrap-ter">
+          <img src="images/fleche_gauche_pou.png" alt="" id="backBtn3" />
+          <div class="gallery-ter" id="Hufflepuff"></div>
+          <img src="images/fleche_droite_pou.png" alt="" id="nextBtn3" />
+        </div>
+        <p class="maisons4">Serdaigle</p>
+        <!-- voici le quatrième block qui permet d'afficher uniquement les cartes dont la maison est Serdaigle -->
+        <div class="gallery-wrap-4">
+          <img src="images/fleche_gauche_serd.png" alt="" id="backBtn4" />
+          <div class="gallery-4" id="Ravenclaw"></div>
+          <img src="images/fleche_droite_serd.png" alt="" id="nextBtn4" />
+        </div>
+        <p class="maisons5">Autres</p>
+        <!-- voici le cinquième block qui permet d'afficher uniquement les cartes qui ne possèdent pas de maison -->
+        <div class="gallery-wrap-5">
+          <img src="images/fleche_gauche_autre.png" alt="" id="backBtn5" />
+          <div class="gallery-5" id="noHouseAffiliated"></div>
+          <img src="images/fleche_droite_autre.png" alt="" id="nextBtn5" />
+        </div>
+
+        <button onclick="togglePopup()" id="buttonechange">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        </button>
+
+        <div id="popup-overlay">
+          <div class="popup-content">
+            <h2>Formulaire d'échange de cartes</h2>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Pseudo du destinataire"
+              required
+            />
+            <div class="autocomplete">
+              <input
+                type="text"
+                id="myInput"
+                placeholder="Choix de la carte à échanger"
+                required
+              />
+              <div class="autocomplete-items" id="autocomplete-items"></div>
+            </div>
+            <a href="/" class="popup-send">Confirmer la demande d'échange</a>
+            <a
+              href="javascript:void(0)"
+              onclick="togglePopup()"
+              class="popup-exit"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- voici le premier script qui va permettre au menu slider de la maison Gryffondor de fonctionner en cliquant soit sur les flèches prévues à cet effet ou bien en scrollant avec la molette -->
+        <script>
+          let scrollContainer = document.querySelector(
+            ".gallery-wrap .gallery"
+          );
+          let backBtn = document.getElementById("backBtn");
+          let nextBtn = document.getElementById("nextBtn");
+
+          scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "auto";
+          });
+
+          nextBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft += 600;
+          });
+
+          backBtn.addEventListener("click", () => {
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= 600;
+          });
+        </script>
+        <!-- voici le second script qui va permettre au menu slider de la maison Serpentard de fonctionner en cliquant soit sur les flèches prévues à cet effet ou bien en scrollant avec la molette -->
+        <script>
+          let scrollBlock = document.querySelector(
+            ".gallery-wrap-bis .gallery-bis"
+          );
+          let backBtn2 = document.getElementById("backBtn2");
+          let nextBtn2 = document.getElementById("nextBtn2");
+
+          scrollBlock.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollBlock.scrollLeft += evt.deltaY;
+            scrollBlock.style.scrollBehavior = "auto";
+          });
+
+          nextBtn2.addEventListener("click", () => {
+            scrollBlock.style.scrollBehavior = "smooth";
+            scrollBlock.scrollLeft += 600;
+          });
+
+          backBtn2.addEventListener("click", () => {
+            scrollBlock.style.scrollBehavior = "smooth";
+            scrollBlock.scrollLeft -= 600;
+          });
+        </script>
+        <!-- voici le troisième script qui va permettre au menu slider de la maison Poufsouffle de fonctionner en cliquant soit sur les flèches prévues à cet effet ou bien en scrollant avec la molette -->
+        <script>
+          let scrollContainer3 = document.querySelector(
+            ".gallery-wrap-ter.gallery-ter"
+          );
+          let backBtn3 = document.getElementById("backBtn3");
+          let nextBtn3 = document.getElementById("nextBtn3");
+
+          scrollContainer3.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer3.scrollLeft += evt.deltaY;
+            scrollContainer3.style.scrollBehavior = "auto";
+          });
+
+          nextBtn3.addEventListener("click", () => {
+            scrollContainer3.style.scrollBehavior = "smooth";
+            scrollContainer3.scrollLeft += 600;
+          });
+
+          backBtn3.addEventListener("click", () => {
+            scrollContainer3.style.scrollBehavior = "smooth";
+            scrollContainer3.scrollLeft -= 600;
+          });
+        </script>
+        <!-- voici le quatrième script qui va permettre au menu slider de la maison Serdaigle de fonctionner en cliquant soit sur les flèches prévues à cet effet ou bien en scrollant avec la molette -->
+        <script>
+          let scrollContainer4 = document.querySelector(
+            ".gallery-wrap-4 .gallery-4"
+          );
+          let backBtn4 = document.getElementById("backBtn4");
+          let nextBtn4 = document.getElementById("nextBtn4");
+
+          scrollContainer4.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer4.scrollLeft += evt.deltaY;
+            scrollContainer4.style.scrollBehavior = "auto";
+          });
+
+          nextBtn4.addEventListener("click", () => {
+            scrollContainer4.style.scrollBehavior = "smooth";
+            scrollContainer4.scrollLeft += 600;
+          });
+
+          backBtn4.addEventListener("click", () => {
+            scrollContainer4.style.scrollBehavior = "smooth";
+            scrollContainer4.scrollLeft -= 600;
+          });
+        </script>
+        <!-- voici le cinquième script qui va permettre au menu slider des "sans maisons" de fonctionner en cliquant soit sur les flèches prévues à cet effet ou bien en scrollant avec la molette -->
+        <script>
+          let scrollContainer5 = document.querySelector(
+            ".gallery-wrap-5 .gallery-5"
+          );
+          let backBtn5 = document.getElementById("backBtn5");
+          let nextBtn5 = document.getElementById("nextBtn5");
+
+          scrollContainer5.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer5.scrollLeft += evt.deltaY;
+            scrollContainer5.style.scrollBehavior = "auto";
+          });
+
+          nextBtn5.addEventListener("click", () => {
+            scrollContainer5.style.scrollBehavior = "smooth";
+            scrollContainer5.scrollLeft += 600;
+          });
+
+          backBtn5.addEventListener("click", () => {
+            scrollContainer5.style.scrollBehavior = "smooth";
+            scrollContainer5.scrollLeft -= 600;
+          });
+        </script>
+        <!-- on passe maintenant au script qui va nous permettre de récupérer l'API Harry Potter et d'afficher pour chaque personnage les bonnes informations selon sa maison, etc... -->
+        <script>
+          function fetchCharacters() {
+            return fetch("https://hp-api.lainocs.fr/characters").then(
+              (response) => response.json()
+            );
+          }
+
+          async function displayCharacters() {
+            const data = await fetchCharacters();
+            console.log(data);
+            data.forEach((character) => {
+              if (character.house) {
+                let houseContainerId = `${character.house[0].toUpperCase()}${character.house
+                  .slice(1)
+                  .toLowerCase()}`;
+                let houseContainer = document.getElementById(houseContainerId);
+                if (houseContainer) {
+                  houseContainer.innerHTML += `
+                                <a href="hp-single.html?slug=${character.slug}">
+                                    <div class="character">
+                                        <p>${character.name}</p>
+                                        <img src="${character.image}" alt="${character.name}">
+                                    </div>
+                                </a>
+                                `;
+                }
+              } else {
+                let houseContainerId = `noHouseAffiliated`;
+                let houseContainer = document.getElementById(houseContainerId);
+                if (houseContainer) {
+                  houseContainer.innerHTML += `
+                                <a href="hp-single.html?slug=${character.slug}">
+                                    <div class="character">
+                                        <p>${character.name}</p>
+                                        <img src="${character.image}" alt="${character.name}">
+                                    </div>
+                                </a>
+                                `;
+                }
+              }
+            });
+          }
+
+          displayCharacters();
+        </script>
+        <script>
+          function togglePopup() {
+            let popup = document.querySelector("#popup-overlay");
+            popup.classList.toggle("open");
+          }
+        </script>
+        <script>
+          const inputField = document.getElementById("myInput");
+          const autocompleteItems =
+            document.getElementById("autocomplete-items");
+
+          inputField.addEventListener("input", function () {
+            const inputText = this.value.toLowerCase();
+            autocompleteItems.innerHTML = "";
+            fetch(`https://hp-api.lainocs.fr/characters`)
+              .then((response) => response.json())
+              .then((data) => {
+                const filteredCharacters = data.filter((character) =>
+                  character.name.toLowerCase().includes(inputText)
+                );
+                filteredCharacters.forEach((character) => {
+                  const item = document.createElement("div");
+                  item.classList.add("autocomplete-item");
+                  item.textContent = character.name;
+                  item.addEventListener("click", function () {
+                    inputField.value = character.name;
+                    autocompleteItems.innerHTML = "";
+                  });
+                  autocompleteItems.appendChild(item);
+                });
+              })
+              .catch((error) => {
+                console.error("Error fetching data:", error);
+              });
+          });
+
+          document.addEventListener("click", function (e) {
+            if (
+              !autocompleteItems.contains(e.target) &&
+              e.target !== inputField
+            ) {
+              autocompleteItems.innerHTML = "";
+            }
+          });
+        </script>
+        <script>
+          const zoneInput = document.getElementById("searchInput");
+          const autocompleteItems2 = document.getElementById(
+            "autocomplete-search"
+          );
+
+          // Fonction pour mettre à jour les suggestions d'autocomplétion
+          function updateAutocomplete(inputText) {
+            autocompleteItems2.innerHTML = "";
+            if (inputText.trim() !== "") {
+              fetch(`https://hp-api.lainocs.fr/characters`)
+                .then((response) => response.json())
+                .then((data) => {
+                  const filteredCharacters = data.filter((character) =>
+                    character.name.toLowerCase().includes(inputText)
+                  );
+                  filteredCharacters.forEach((character) => {
+                    const item = document.createElement("div");
+                    item.classList.add("autocomplete-search");
+                    item.textContent = character.name;
+                    item.addEventListener("click", function () {
+                      zoneInput.value = "";
+                      window.location.href = `hp-single.html?slug=${character.slug}`;
+                    });
+                    autocompleteItems2.appendChild(item);
+                  });
+                })
+                .catch((error) => {
+                  console.error("Error fetching data:", error);
+                });
+            }
+          }
+
+          // Écouteur d'événement sur la zone de saisie
+          zoneInput.addEventListener("input", function () {
+            const inputText = this.value.trim().toLowerCase();
+            updateAutocomplete(inputText);
+          });
+
+          // Écouteur d'événement pour fermer les suggestions lorsque vous cliquez à l'extérieur de la barre de recherche
+          document.addEventListener("click", function (e) {
+            if (
+              !autocompleteItems2.contains(e.target) &&
+              e.target !== zoneInput
+            ) {
+              autocompleteItems2.innerHTML = "";
+            }
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", async () => {
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+              document.getElementById("error-message").innerText =
+                "Vos identifiants ne sont pas reconnus.";
+              return;
+            }
+
+            const response = await fetch("http://localhost:3000/getMyProfile", {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            });
+
+            if (response.status === 401 || response.status === 403) {
+              window.location.href = "./index.html";
+              localStorage.removeItem("token");
+            }
+          });
+        </script>
+      </div>
+    </section>
+    <footer>
+      <div></div>
+    </footer>
+  </body>
+</html>

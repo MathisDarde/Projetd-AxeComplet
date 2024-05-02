@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Harry Potter Cards</title>
+    <link rel="icon" href="images/symbol deathly hallows.svg" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <section class="interfacelogin">
+      <div id="mainpopup">
+        <div class="popup-content-main">
+          <div class="videodiv">
+            <video autoplay muted loop>
+              <source src="images/loginvideo.mp4" type="video/mp4" />
+              Votre navigateur ne prend pas en charge la lecture de vidéos.
+            </video>
+            <div class="textoverlay">
+              <h2>Inscrivez vous pour commencer votre collection</h2>
+              <p>Nous vous attendions !</p>
+              <div class="inscDiv">
+                <p>Vous ne possédez pas de compte ?</p>
+                <a href="inscription.html"><button>Je m'inscris</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="logindiv">
+            <div class="leftboxresponsive">
+              <img
+                src="images/symbol deathly hallows.svg"
+                alt="Logo"
+                class="mainlogoresp"
+              />
+              <h2>Connexion</h2>
+              <p>
+                Connectez-vous pour pouvoir profiter des fonctionnalités du site
+                !
+              </p>
+            </div>
+            <div class="rightboxresponsive">
+              <p id="error-message" class="hiddenp"></p>
+              <form method="POST" id="formLogin">
+                <div class="email">
+                  <label for="email">Adresse Mail</label>
+                  <input
+                    type="text"
+                    name="email"
+                    id="emaillogin"
+                    placeholder="Adresse mail"
+                    required
+                  />
+                </div>
+                <div class="password">
+                  <label for="password">Mot de passe</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="passwordlogin"
+                    placeholder="Mot de passe"
+                    required
+                  />
+                  <span
+                    toggle="passwordlogin"
+                    class="field-icon toggle-password"
+                    ><i class="fas fa-eye"></i
+                  ></span>
+                </div>
+                <button type="submit">Je me connecte</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var showPasswordIcons = document.querySelectorAll(".toggle-password");
+        showPasswordIcons.forEach(function (icon) {
+          icon.addEventListener("click", function () {
+            var passwordField = document.getElementById(
+              icon.getAttribute("toggle")
+            );
+            if (passwordField.type === "password") {
+              passwordField.type = "text";
+              icon.querySelector("i").classList.remove("fa-eye");
+              icon.querySelector("i").classList.add("fa-eye-slash");
+            } else {
+              passwordField.type = "password";
+              icon.querySelector("i").classList.remove("fa-eye-slash");
+              icon.querySelector("i").classList.add("fa-eye");
+            }
+          });
+        });
+      });
+    </script>
+    <script src="connexion.js"></script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Harry Potter Cards</title>
+    <link rel="icon" href="images/symbol deathly hallows.svg" />
+    <link rel="stylesheet" type="text/css" href="css/tiragequo.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><div class="logo">Harry Potter Cards</div></a>
+      <input type="checkbox" id="nav_check" hidden />
+      <nav>
+        <ul>
+          <li>
+            <a href="main.html">Accueil</a>
+          </li>
+          <li>
+            <a href="#" class="active">Tirage quotidien</a>
+          </li>
+          <li>
+            <a href="ma_collection.html">Ma collection</a>
+          </li>
+          <li>
+            <a href="echange.html">Echange de cartes</a>
+          </li>
+          <li>
+            <a href="profil.html">Profil</a>
+          </li>
+        </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </header>
+
+    <section id="maintirage">
+      <div class="background-image"></div>
+      <p>Effectuez votre tirage quotidien !</p>
+
+      <div class="card-container">
+        <div class="card-info" style="display: none">
+          <p class="nom">Nom:</p>
+          <p class="house">Maison:</p>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button id="flipAllButton">Retourner toutes les cartes</button>
+      </div>
+    </section>
+
+    <script>
+      const cards = document.querySelectorAll(".card");
+      const flipAllButton = document.getElementById("flipAllButton");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          card.classList.toggle("is-flipped");
+        });
+      });
+
+      flipAllButton.addEventListener("click", () => {
+        cards.forEach((card) => {
+          card.classList.toggle("is-flipped");
+        });
+      });
+    </script>
+  </body>
+</html>

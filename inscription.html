@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Harry Potter Cards</title>
+    <link rel="icon" href="images/symbol deathly hallows.svg" />
+    <link rel="stylesheet" href="css/inscription.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Inscrivez-vous pour accéder à Harry Potter Cards !</h2>
+      <a href="index.html"><button>Je possède déjà un compte</button></a>
+      <p id="error-message" class="hiddenp"></p>
+      <form method="POST" id="formInsc">
+        <div class="form-group">
+          <label for="nom">Nom:</label><br />
+          <input
+            type="text"
+            class="form-control"
+            id="nom"
+            name="nom"
+            placeholder="Votre nom..."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="pseudo">Pseudo:</label><br />
+          <input
+            type="text"
+            class="form-control"
+            id="pseudo"
+            name="pseudo"
+            placeholder="Votre pseudo..."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label><br />
+          <input
+            type="number"
+            class="form-control"
+            id="age"
+            name="age"
+            placeholder="Votre âge..."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label><br />
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Votre mail..."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe:</label><br />
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Votre mot de passe..."
+            required
+          />
+          <span toggle="password" class="field-icon toggle-password"
+            ><i class="fas fa-eye"></i
+          ></span>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirmer le mot de passe:</label><br />
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirmer votre mot de passe..."
+            required
+          />
+          <span toggle="confirmPassword" class="field-icon toggle-password"
+            ><i class="fas fa-eye"></i
+          ></span>
+        </div>
+        <div class="form-group">
+          <button type="submit">Je valide mon inscription</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("formInsc")
+        .addEventListener("submit", function (event) {
+          var password = document.getElementById("password").value;
+          var confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          if (password !== confirmPassword) {
+            alert("Les mots de passe ne correspondent pas !");
+            event.preventDefault();
+          }
+        });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var showPasswordIcons = document.querySelectorAll(".toggle-password");
+        showPasswordIcons.forEach(function (icon) {
+          icon.addEventListener("click", function () {
+            var passwordField = document.getElementById(
+              icon.getAttribute("toggle")
+            );
+            if (passwordField.type === "password") {
+              passwordField.type = "text";
+              icon.querySelector("i").classList.remove("fa-eye");
+              icon.querySelector("i").classList.add("fa-eye-slash");
+            } else {
+              passwordField.type = "password";
+              icon.querySelector("i").classList.remove("fa-eye-slash");
+              icon.querySelector("i").classList.add("fa-eye");
+            }
+          });
+        });
+      });
+    </script>
+    <script src="inscription.js"></script>
+  </body>
+</html>
