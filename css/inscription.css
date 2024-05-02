@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "Harry P";
+  src: url("../images/harryp__-webfont.woff2") format("woff2"),
+    url("../images/harryp__-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* on récupère ici la police Harry Potter que j'ai téléchargé sur Internet */
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url("../images/caviardreams-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caviar Dreams Bold";
+  src: url("../images/caviardreams_bold-webfont.woff2") format("woff2"),
+    url("../images/caviardreams_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Harry P";
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  /* on définit les valeurs de base de la page */
+}
+
+.container {
+  text-align: center;
+}
+
+.container h2 {
+  font-family: "Caviar Dreams Bold";
+  text-align: center;
+  font-size: 48px;
+  margin: 25px;
+}
+
+.container a button {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Caviar Dreams";
+  margin-bottom: 50px;
+  display: inline-block; /* Pour que le bouton occupe la largeur du conteneur */
+  margin: 0 auto; /* Pour centrer le bouton horizontalement */
+  border: none; /* Pour supprimer les contours */
+  outline: none; /* Pour supprimer la bordure de focus */
+  background: none; /* Pour supprimer tout arrière-plan */
+  cursor: pointer;
+}
+
+.container a button:hover {
+  color: #fff;
+  background-color: #00003f;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.container .form-group {
+  text-align: center;
+}
+
+.container .form-group label {
+  font-size: 20px;
+  font-family: "Caviar Dreams Bold";
+  position: absolute;
+  left: 475px;
+}
+
+.container .form-group input {
+  width: 600px;
+  height: 75px;
+  margin: 25px;
+  font-size: 20px;
+  font-family: "Caviar Dreams";
+  padding: 20px;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+}
+
+.container .form-group button {
+  text-align: center;
+  width: 250px;
+  height: 70px;
+  margin: 25px;
+  font-size: 25px;
+  border-radius: 10px;
+  background: #00003f;
+  color: #fff;
+}
+
+.container .form-group button:hover {
+  background: #07072c;
+  color: #959595;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.field-icon {
+  left: 1015px;
+  margin-top: 55px;
+  position: absolute;
+  z-index: 2;
+}
+
+.field-icon i {
+  color: #aaa;
+  cursor: pointer;
+}
+
+.hiddenp {
+  display: none;
+}
+
+.active {
+  display: block;
+  font-family: "Caviar Dreams";
+  background: red;
+  color: #fff;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 15px;
+}

@@ -1,0 +1,666 @@
+@font-face {
+    font-family: 'Harry P';
+    src: url('harryp__-webfont.woff2') format('woff2'),
+         url('harryp__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('images/caviardreams-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caviar Dreams Bold';
+    src: url('images/caviardreams_bold-webfont.woff2') format('woff2'),
+         url('images/caviardreams_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Harry P';
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+header {
+    background: #00003f;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 35px;
+    color: white;
+    margin-left: 25px;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a{
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    padding: 5px 0;
+    margin: 0 20px;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+    border-bottom-color: white;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    header {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+       position: absolute;
+       width: 100%;
+       left: 100%;
+       top: 70px;
+       width: 100%;
+       background: #00003f;
+       padding: 50px;
+       transition: 0.5s;
+       z-index: 9999;
+    }
+
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+@media only screen and (max-width: 335px) {
+    header .logo {
+        font-size: 30px;
+        margin-left: 5px;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    header nav {
+       position: absolute;
+       width: 100%;
+       left: 100%;
+       top: 70px;
+       width: 100%;
+       background: #00003f;
+       padding: 50px;
+       transition: 0.5s;
+    }
+
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+@media only screen and (max-width: 285px) {
+    header .logo {
+        font-size: 22px;
+        margin-left: 5px;
+    }
+}
+
+.single {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#character .single .titre {
+    font-size: 100px;
+    text-align: center;
+    padding: 50px;
+    font-family: 'Harry P';
+}
+
+@media only screen and (max-width: 675px){
+    #character .single .titre {
+        font-size: 80px;
+    }
+}
+@media only screen and (max-width: 550px){
+    #character .single .titre {
+        font-size: 70px;
+        padding: 25px;
+    }
+}
+@media only screen and (max-width: 425px){
+    #character .single .titre {
+        font-size: 60px;
+        padding: 25px;
+    }
+}
+@media only screen and (max-width: 300px){
+    #character .single .titre {
+        font-size: 45px;
+        padding: 20px;
+    }
+}
+
+#character .single img {
+    width: 400px;
+    height: 600px;
+    margin-bottom: 50px;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 1000px) {
+    #character .single img {
+        z-index: 1;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    #character .single img {
+        width: 300px;
+        height: 500px;
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #character .single img {
+        width: 200px;
+        height: 400px;
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    #character .single img {
+        width: 175px;
+        height: 275px;
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    #character .single img {
+        width: 150px;
+        height: 250px;
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 300px) {
+    #character .single img {
+        width: 125px;
+        height: 225px;
+        margin-bottom: 10px;
+    }
+}
+
+.gryffondor {
+    outline: solid 10px #f3bf1b;
+    background-color: #4d0505;
+}
+
+@media only screen and (max-width: 550px) {
+    .gryffondor {
+        outline: solid 5px #f3bf1b;
+    }
+}
+
+.serpentard {
+    background-color: #24581e;
+    outline: solid 10px #9e9997;
+}
+
+@media only screen and (max-width: 550px) {
+    .serpentard {
+        outline: solid 5px #9e9997;
+    }
+}
+
+.poufsouffle {
+    outline: solid 10px #f3dd0a;
+    background-color: #000;
+}
+
+@media only screen and (max-width: 550px) {
+    .poufsouffle {
+        outline: solid 5px #f3dd0a;
+    }
+}
+
+.serdaigle {
+    outline: solid 10px #a77a53;
+    background-color: #0b314a;
+}
+
+@media only screen and (max-width: 550px) {
+    .serdaigle {
+        outline: solid 5px #a77a53;
+    }
+}
+
+.pasdemaisonaffiliee {
+    outline: solid 10px orange;
+    background-color: #3f006b;
+}
+
+@media only screen and (max-width: 550px) {
+    .pasdemaisonaffiliee {
+        outline: solid 5px orange;
+    }
+}
+
+#character .single p {
+    font-size: 35px;
+    margin: 10px;
+    color: #00003f;
+    font-family: 'Caviar Dreams';
+}
+
+@media only screen and (max-width: 675px) {
+    #character .single p {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    #character .single p {
+        font-size: 20px;
+        font-family: 'Caviar Dreams Bold';
+    }
+}
+@media only screen and (max-width: 425px){
+    #character .single p {
+        font-size: 16px;
+        font-family: 'Caviar Dreams Bold';
+    }
+}
+@media only screen and (max-width: 350px){
+    #character .single p {
+        font-size: 14px;
+        font-family: 'Caviar Dreams Bold';
+    }
+}
+@media only screen and (max-width: 300px){
+    #character .single p {
+        font-size: 12px;
+        font-family: 'Caviar Dreams Bold';
+    }
+}
+
+#character .single a {
+    font-size: 25px;
+    margin: 25px;
+    background-color: #00003f;
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 675px) {
+    #character .single a {
+        font-size: 20px;
+        margin: 20px;
+        padding: 12px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    #character .single a {
+        font-size: 16px;
+        margin: 16px;
+        padding: 10px;
+    }
+}
+
+#character .single a:hover {
+    background-color: #00001d;
+    color: grey;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#character .imageicons .side-elements {
+    position: absolute;
+    left: 115%;
+    transform: translateX(-50%), translateY(-50%);
+    top: 55%;
+}
+
+@media only screen and (max-width: 1000px){
+    #character .imageicons .side-elements{
+        left: 110%;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    #character .imageicons .side-elements {
+        top: 55%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #character .imageicons .side-elements {
+        top: 50%;    
+    }
+}
+@media only screen and (max-width: 425px) {
+    #character .imageicons .side-elements {
+        top: 35%;    
+    }
+}
+@media only screen and (max-width: 350px) {
+    #character .imageicons .side-elements {
+        top: 40%;    
+    }
+}
+@media only screen and (max-width: 300px) {
+    #character .imageicons .side-elements {
+        top: 40%;    
+    }
+}
+
+#character .imageicons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#character .side-elements div {
+    padding: 5px;
+}
+
+#character .side-elements div i {
+    color: #fff;
+    background-color: #00003f;
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 675px) {
+    #character .side-elements div i {
+        padding: 18px;
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    #character .side-elements div i {
+        padding: 18px;
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    #character .side-elements div i {
+        padding: 15px;
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    #character .side-elements div i {
+        padding: 13px;
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 300px) {
+    #character .side-elements div i {
+        padding: 11px;
+        font-size: 10px;
+    }
+}
+
+#table {
+    text-align: center;
+}
+
+#character .side-elements div i:hover {
+    cursor: pointer;
+    color: grey;
+    background-color: #00001d;
+    transition: 0.3s ease-in-out;
+}
+
+button {
+    background: #00003f;
+    border-radius: 100px;
+}
+
+#popup-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 98;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#popup-overlay.open {
+    display: block !important;
+}
+
+.popup-content {
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-content h2 {
+    color: #000;
+    margin: 20px;
+    font-family: 'Caviar Dreams';
+    text-align: center;
+}
+
+.popup-content .popup-send{
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: 'Caviar Dreams';
+    font-size: 12px;
+    margin: 20px;
+}
+
+.popup-send:hover {
+    color: #ccc;
+    background-color: #00003f;
+    transition: 0.3s ease-in-out;
+}
+
+.popup-exit {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: #fff;
+    color: #ba0000;
+    outline: solid 2px #000;
+    border-radius: 200px;
+    padding: 12px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.popup-exit:hover {
+    color: #ff0000;
+    background-color: #9e9997;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .popup-content input {
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-family: 'Caviar Dreams';
+  }
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    font-family: 'Caviar Dreams';
+  }
+  
+  .autocomplete-item:hover {
+    background-color: #e9e9e9;
+  }
+
+@media only screen and (max-width: 700px){
+    .popup-content {
+        max-width: 400px;
+        width: 100%;
+    }
+    .autocomplete {
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .popup-content {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .popup-content input {
+        width: 200px;
+        font-size: 10px;
+    }
+
+    .popup-content h2 {
+        font-size: 20px;
+    }
+
+    .autocomplete-item {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .popup-content {
+        max-width: 250px;
+        width: 100%;
+    }
+
+    .popup-content input {
+        width: 150px;
+        padding: 10px;
+        font-size: 8px;
+    }
+
+    .popup-content h2 {
+        font-size: 15px;
+    }
+
+    .popup-content .popup-send {
+        font-size: 8px;
+        padding: 8px;
+        margin: 10px;
+    }
+
+    .autocomplete-item {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 315px) {
+    .popup-content {
+        max-width: 200px;
+        width: 100%;
+    }
+
+    .popup-content input {
+        width: 115px;
+        padding: 5px;
+        font-size: 7px;
+    }
+
+    .popup-content h2 {
+        font-size: 10px;
+    }
+
+    .popup-content .popup-send {
+        font-size: 7px;
+        padding: 7px;
+        margin: 10px;
+    }
+
+    .autocomplete-item {
+        font-size: 9px;
+    }
+}
+
+.clicked {
+    color: red !important;
+}

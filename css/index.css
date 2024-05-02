@@ -1,0 +1,547 @@
+@font-face {
+  font-family: "Harry P";
+  src: url("../images/harryp__-webfont.woff2") format("woff2"),
+    url("../images/harryp__-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  /* on récupère ici la police Harry Potter que j'ai téléchargé sur Internet */
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url("../images/caviardreams-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caviar Dreams Bold";
+  src: url("../images/caviardreams_bold-webfont.woff2") format("woff2"),
+    url("../images/caviardreams_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Harry P";
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  /* on définit les valeurs de base de la page */
+}
+
+#mainpopup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display: none;  */
+  /* activer ou désactiver le popup de connexion lors de l'entrée sur le site */
+}
+
+.popup-content-main {
+  max-width: 1000px;
+  height: 650px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: rgb(225, 225, 225);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 10px;
+  outline: none;
+}
+
+.videodiv {
+  display: flex;
+  flex-basis: 50%;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.textoverlay h2 {
+  position: absolute;
+  color: #000;
+  top: 50px;
+  font-size: 45px;
+  margin: 25px;
+}
+.textoverlay p {
+  position: absolute;
+  color: #000;
+  top: 160px;
+  left: 115px;
+  font-size: 20px;
+  margin: 25px;
+  font-family: "Caviar Dreams Bold";
+}
+
+.textoverlay .inscDiv {
+  background: rgba(158, 153, 151, 0.6);
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  padding: 35px;
+  top: 500px;
+  bottom: 100px;
+  object-fit: cover;
+}
+.inscDiv p {
+  position: absolute;
+  top: 1px;
+  font-size: 15px;
+  left: 0;
+  font-family: "Caviar Dreams Bold";
+  color: #000;
+  justify-content: center;
+}
+.inscDiv button {
+  position: absolute;
+  top: 15px;
+  left: 375px;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background: #00003f;
+  color: #fff;
+}
+
+.inscDiv button:hover {
+  cursor: pointer;
+  background: #05052a;
+  color: #9e9997;
+  transition: 0.3s ease-in-out;
+}
+
+.logindiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.leftboxresponsive {
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logindiv .leftboxresponsive .mainlogoresp {
+  display: none;
+}
+
+.logindiv .leftboxresponsive h2 {
+  font-size: 48px;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-top: 50px;
+}
+
+.logindiv .leftboxresponsive p {
+  font-size: 12px;
+  font-family: "Caviar Dreams Bold";
+  padding-bottom: 25px;
+}
+
+.logindiv label {
+  font-size: 20px;
+  padding: 20px;
+  display: block;
+  font-family: "Caviar Dreams Bold";
+}
+
+.logindiv input {
+  text-decoration: none;
+  border: none;
+  padding: 15px;
+  width: 300px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.logindiv button {
+  width: 150px;
+  text-align: center;
+  font-size: 25px;
+  margin: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #00003f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logindiv button:hover {
+  background: #1a1a5f;
+  color: #9e9997;
+  transition: 0.3s ease-in-out;
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.password {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.field-icon {
+  float: right;
+  margin-right: -250px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+}
+
+.field-icon i {
+  color: #aaa;
+  cursor: pointer;
+}
+
+.hiddenp {
+  display: none;
+}
+
+.active {
+  display: block;
+  font-family: "Caviar Dreams";
+  background: red;
+  color: #fff;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+@media only screen and (max-width: 1035px) {
+  .popup-content-main {
+    max-width: 800px;
+    height: 650px;
+    width: 100%;
+  }
+  .textoverlay p {
+    position: absolute;
+    color: #000;
+    top: 160px;
+    left: 65px;
+    font-size: 20px;
+    margin: 25px;
+    font-family: "Caviar Dreams Bold";
+  }
+  .textoverlay .inscDiv {
+    left: 0;
+    right: 0;
+    padding: 35px;
+    top: 500px;
+    bottom: 50px;
+  }
+  .inscDiv p {
+    position: absolute;
+    top: -15px;
+    font-size: 15px;
+    left: 45px;
+  }
+  .inscDiv button {
+    top: 45px;
+    left: 150px;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+  }
+  .logindiv p {
+    font-size: 12px;
+    padding-bottom: 25px;
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 825px) {
+  .popup-content-main {
+    max-width: 700px;
+    height: 650px;
+    width: 100%;
+  }
+  .textoverlay p {
+    top: 32%;
+    left: 43%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    margin: 25px;
+  }
+  .textoverlay .inscDiv {
+    left: 0;
+    right: 0;
+    padding: 35px;
+    top: 500px;
+    bottom: 50px;
+  }
+  .inscDiv p {
+    position: absolute;
+    top: -5px;
+    font-size: 15px;
+    left: 150px;
+  }
+  .inscDiv button {
+    top: 45px;
+    left: 125px;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+  }
+  .logindiv p {
+    font-size: 12px;
+    padding-bottom: 25px;
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .popup-content-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    height: 650px;
+    width: 100%;
+  }
+
+  .videodiv {
+    height: 30%;
+    width: 100%;
+  }
+
+  .logindiv {
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .textoverlay h2 {
+    left: 46%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    font-size: 35px;
+  }
+
+  .textoverlay p {
+    top: 25%;
+    left: 45%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    margin: 25px;
+  }
+  .textoverlay .inscDiv {
+    left: 0;
+    right: 0;
+    padding: 35px;
+    top: 175px;
+    bottom: 50px;
+    height: 40px;
+  }
+  .inscDiv p {
+    position: static;
+    font-size: 15px;
+    margin-left: 125px;
+    padding-bottom: 65px;
+  }
+  .inscDiv button {
+    position: static;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+  }
+  .logindiv p {
+    font-size: 12px;
+    padding-bottom: 25px;
+    width: 250px;
+  }
+  .logindiv #formLogin .email input {
+    position: absolute;
+    left: 350px;
+    top: 385px;
+  }
+  .logindiv #formLogin .password input {
+    position: absolute;
+    left: 350px;
+    top: 485px;
+  }
+  .logindiv #formLogin .email label {
+    position: absolute;
+    left: 415px;
+    top: 325px;
+  }
+  .logindiv #formLogin .password label {
+    position: absolute;
+    left: 415px;
+    top: 425px;
+  }
+  .logindiv button {
+    position: absolute;
+    left: 400px;
+    top: 540px;
+  }
+  .field-icon {
+    position: absolute;
+    left: 610px;
+    top: 532px;
+  }
+  #error-message {
+    position: absolute;
+    top: 275px;
+    left: 360px;
+    font-size: 15px;
+    padding: 10px;
+  }
+  .logindiv .leftboxresponsive .mainlogoresp {
+    display: block;
+    position: absolute;
+    left: 100px;
+    width: 20%;
+    top: 350px;
+  }
+  .logindiv .leftboxresponsive h2 {
+    position: absolute;
+    left: 103px;
+    top: 435px;
+  }
+  .logindiv .leftboxresponsive p {
+    position: absolute;
+    top: 545px;
+    left: 45px;
+  }
+}
+@media only screen and (max-width: 665px) {
+  .popup-content-main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    height: 650px;
+    width: 100%;
+  }
+
+  .videodiv {
+    height: 25%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logindiv {
+    height: 100%;
+    text-align: center;
+  }
+
+  .textoverlay h2 {
+    left: 46%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    font-size: 35px;
+  }
+
+  .textoverlay p {
+    top: 25%;
+    left: 45%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    margin: 25px;
+  }
+  .textoverlay .inscDiv {
+    left: 0;
+    right: 0;
+    padding: 30px;
+    top: 140px;
+  }
+  .inscDiv p {
+    position: static;
+    font-size: 15px;
+    margin-left: 125px;
+    padding-bottom: 65px;
+  }
+  .inscDiv button {
+    position: static;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+  }
+  .logindiv p {
+    display: none;
+  }
+  .logindiv #formLogin .email input {
+    position: static;
+  }
+  .logindiv #formLogin .password input {
+    position: static;
+  }
+  .logindiv #formLogin .email label {
+    position: static;
+  }
+  .logindiv #formLogin .password label {
+    position: static;
+  }
+  .logindiv button {
+    position: static;
+  }
+  .field-icon {
+    position: static;
+  }
+  #error-message {
+    position: static;
+    font-size: 15px;
+    padding: 10px;
+  }
+  .logindiv .leftboxresponsive .mainlogoresp {
+    display: none;
+  }
+  .logindiv .leftboxresponsive h2 {
+    position: static;
+    margin-top: 25px;
+    padding-bottom: 5px;
+  }
+
+  .logindiv .leftboxresponsive {
+    display: none;
+  }
+}
